@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#dotnet build
+
+docker-compose run --rm apiweb rm -R dist/
+
+
+#docker-compose run --rm  apiweb dotnet restore
+
+docker-compose run --rm apiweb dotnet publish --configuration Release --output dist
+
+#chmod -R +x dist/
+
+./scripts/ignorandoarquivos
+
+docker-compose restart apiweb
