@@ -1,0 +1,26 @@
+
+version: '2.0'
+
+services:
+  apiweb:
+#    imagem: 'projeto-financeiro-app'
+    build:
+      context: .
+    volumes:
+       - ./:/app/
+    #command: dotnet restore
+    command: dotnet run     
+    ports:
+      - "5000:5000"
+  #   depends_on:
+  #     - database
+  # database:
+  #   image: microsoft/mssql-server-linux:2017-latest
+  #   volumes:
+  #     - ./mssql_bd:/var/opt/mssql
+  #   ports:
+  #     - "1433:1433"
+  #   environment:
+  #     - ACCEPT_EULA=Y
+  #     - MSSQL_SA_PASSWORD=DockerSql2017
+  #     - MSSQL_PID=Developer
