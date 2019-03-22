@@ -2,7 +2,7 @@
 
 #dotnet build
 
-docker-compose run --rm apiweb rm -R dist/
+#docker-compose run --rm apiweb rm -R dist/
 
 
 #docker-compose run --rm  apiweb dotnet restore
@@ -13,4 +13,4 @@ docker-compose run --rm apiweb dotnet publish --configuration Release --output d
 
 ./scripts/ignorandoarquivos
 
-docker-compose restart apiweb
+#docker-compose restart apiweb

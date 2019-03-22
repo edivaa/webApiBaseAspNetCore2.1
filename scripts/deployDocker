@@ -1,13 +1,12 @@
 #!/bin/bash
-#
 
-docker-compose stop apiweb
+#docker-compose stop apiweb
 
 #dotnet build
 
-rm -R dist/
+#rm -R dist/
 
-dotnet publish --configuration Release --output dist
+#dotnet publish --configuration Release --output dist
 
 #docker-compose down apiweb
 
@@ -15,4 +14,6 @@ dotnet publish --configuration Release --output dist
 
 #docker-compose build apiweb
 #sleep 1000
-docker-compose up -d
+#docker-compose up -d
+
+docker-compose restart apiweb
