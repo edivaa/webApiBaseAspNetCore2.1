@@ -10,7 +10,6 @@ mssql_bd/.system/
 mssql_bd/log/
 mssql_bd/secrets/
 
-
 mssql_bd/data/master.mdf
 mssql_bd/data/mastlog.ldf
 mssql_bd/data/model.mdf
