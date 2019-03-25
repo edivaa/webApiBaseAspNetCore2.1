@@ -4,4 +4,13 @@
 git checkout --  bin/
 git checkout --  obj/
 
+git checkout -- mssql_bd/data/master.mdf
+git checkout -- mssql_bd/data/mastlog.ldf
+git checkout -- mssql_bd/data/model.mdf
+git checkout -- mssql_bd/data/modellog.ldf
+git checkout -- mssql_bd/data/msdbdata.mdf
+git checkout -- mssql_bd/data/msdblog.ldf
+git checkout -- mssql_bd/data/tempdb.mdf
+git checkout -- mssql_bd/data/templog.ldf
+
 
