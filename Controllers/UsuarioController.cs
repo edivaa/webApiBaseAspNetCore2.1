@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using webApiBaseAspNetCore2._1.Services;
 using webApiBaseAspNetCore2._1.Models;
+using webApiBaseAspNetCore2._1.Data;
 
 namespace webApiBaseAspNetCore2._1.Controllers
 {
@@ -13,13 +14,31 @@ namespace webApiBaseAspNetCore2._1.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-       
+        private readonly TodoContext _context; 
+        
+        public UsuarioController (TodoContext context){
+
+                   _context = context;
+                   
+                //    if(_context.Usuarios.Count()=0){
+
+                //        _context.Add(
+                //             new Usuario
+                //            { 
+                //             Nome="Fernando",
+                //             Telefone="99987889",
+                //             Email="fernC@gmail.com"
+                //             );
+                //    }
+
+        }
+
          
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<Usuario>> Get()
         {
-            return  UsuarioService.GetDadosUsuarios();
+            return   _context.Usuarios.ToList();
         }
 
         // GET api/values/5
