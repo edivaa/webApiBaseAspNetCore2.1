@@ -15,11 +15,11 @@ namespace webApiBaseAspNetCore2._1.Services
             
             }
 
-            public static List<Usuario> GetUsuarios(){
+            // public static List<Usuario> GetUsuarios(){
 
-                return _context.Usuarios.getList();
+            //    return  _context.Usuarios.ToList();
                 
-            }  
+            // }  
     }
 
 
