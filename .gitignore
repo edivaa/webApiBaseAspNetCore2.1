@@ -5,6 +5,17 @@ artifacts/
 **/Properties/launchSettings.json
 .vs/WebAppBasae/v15/Server/sqlite3/db.lock
 obj/
+bin/
 mssql_bd/.system/
 mssql_bd/log/
 mssql_bd/secrets/
+
+
+mssql_bd/data/master.mdf
+mssql_bd/data/mastlog.ldf
+mssql_bd/data/model.mdf
+mssql_bd/data/modellog.ldf
+mssql_bd/data/msdbdata.mdf
+mssql_bd/data/msdblog.ldf
+mssql_bd/data/tempdb.mdf
+mssql_bd/data/templog.ldf
