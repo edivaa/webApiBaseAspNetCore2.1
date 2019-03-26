@@ -5,6 +5,7 @@ artifacts/
 **/Properties/launchSettings.json
 .vs/WebAppBasae/v15/Server/sqlite3/db.lock
 obj/
+mssql_bd/
 mssql_bd/.system/
 mssql_bd/log/
 mssql_bd/secrets/

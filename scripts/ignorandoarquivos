@@ -4,4 +4,7 @@
 git checkout --  bin/
 git checkout --  obj/
 
-
+git checkout --  mssql_bd/
+git checkout -- mssql_bd/.system/
+git checkout -- mssql_bd/log/
+git checkout -- mssql_bd/secrets
