@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-using webApiBaseAspNetCore2._1.Services;
 using webApiBaseAspNetCore2._1.Models;
 using webApiBaseAspNetCore2._1.Data;
+using webApiBaseAspNetCore2._1.Services;
 
 namespace webApiBaseAspNetCore2._1.Controllers
 {
@@ -14,31 +14,32 @@ namespace webApiBaseAspNetCore2._1.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
+       
         private readonly TodoContext _context; 
-        
-        public UsuarioController (TodoContext context){
 
-                   _context = context;
-                   
-                //    if(_context.Usuarios.Count()=0){
+        public UsuarioController(TodoContext context){
+            _context = context;
 
-                //        _context.Add(
-                //             new Usuario
-                //            { 
-                //             Nome="Fernando",
-                //             Telefone="99987889",
-                //             Email="fernC@gmail.com"
-                //             );
-                //    }
+            if(_context.Usuarios.Count()==0){
 
+                _context.Usuarios.Add(
+                    new Usuario { 
+                        Nome="Antonio",
+                        Telefone="321212313",
+                        Email="anto@gmail.com"
+                    }
+                );
+
+                _context.SaveChanges();
+            }
         }
 
-         
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<Usuario>> Get()
         {
-            return   _context.Usuarios.ToList();
+             //return UsuarioService.GetDadosUsuarios();   
+             return  _context.Usuarios.ToList();
         }
 
         // GET api/values/5
@@ -50,8 +51,10 @@ namespace webApiBaseAspNetCore2._1.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(Usuario value)
         {
+            _context.Usuarios.Add(value);
+            _context.SaveChanges();
         }
 
         // PUT api/values/5
