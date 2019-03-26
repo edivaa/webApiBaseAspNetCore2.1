@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using webApiBaseAspNetCore2._1.Models;
 using webApiBaseAspNetCore2._1.Data;
+using webApiBaseAspNetCore2._1.Services;
 
 namespace webApiBaseAspNetCore2._1.Controllers
 {
@@ -35,26 +36,23 @@ namespace webApiBaseAspNetCore2._1.Controllers
 
         // GET api/values
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
+        public ActionResult<IEnumerable<Usuario>> Get()
         {
-            return  await _context.Usuarios.ToListAsync();
+             //return UsuarioService.GetDadosUsuarios();   
+             return  _context.Usuarios.ToList();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> GetUsuario(int id)
+        public ActionResult<string> Get(int id)
         {
             return "value";
         }
 
         // POST api/values
         [HttpPost]
-        public async Task<ActionResult<Usuario>> Post(Usuario value)
+        public void Post([FromBody] string value)
         {
-            _context.Usuario.Add(value);
-            await _context.SaveChanges();
-
-            return CreatedAtAction(nameof(Get), new {Id=value.Id},value);
         }
 
         // PUT api/values/5
