@@ -51,8 +51,10 @@ namespace webApiBaseAspNetCore2._1.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(Usuario value)
         {
+            _context.Usuarios.Add(value);
+            _context.SaveChanges();
         }
 
         // PUT api/values/5
