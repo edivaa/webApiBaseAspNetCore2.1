@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using webApiBaseAspNetCore2._1.Models;
 using webApiBaseAspNetCore2._1.Data;
 
 
-namespace webApiBaseAspNetCore2._1.Services
+namespace webApiBaseAspNetCore2._1.Repositories
 {
 
     public class UsuarioRepositorio {
@@ -15,7 +16,7 @@ namespace webApiBaseAspNetCore2._1.Services
             
             }
 
-            // public static List<Usuario> GetUsuarios(){
+            // public IEnumerable<Usuario> GetUsuarios(){
 
             //    return  _context.Usuarios.ToList();
                 
