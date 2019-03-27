@@ -47,6 +47,7 @@ namespace webApiBaseAspNetCore2._1.Controllers
         public ActionResult<string> Get(int id)
         {
             return "value";
+            //return _context.Usuarios.Where(u=>u.id=id);
         }
 
         // POST api/values
