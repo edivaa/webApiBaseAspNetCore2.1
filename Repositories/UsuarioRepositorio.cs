@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using webApiBaseAspNetCore2._1.Models;
 using webApiBaseAspNetCore2._1.Data;
 
-
+using Microsoft.EntityFrameworkCore;
 namespace webApiBaseAspNetCore2._1.Repositories
 {
 
