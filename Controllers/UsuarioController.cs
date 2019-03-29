@@ -38,7 +38,7 @@ namespace webApiBaseAspNetCore2._1.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Usuario>> Get()
         {
-            return   _context.Usuarios.ToList();
+            return _context.Usuarios.ToList();
         }
 
         // GET api/values/5

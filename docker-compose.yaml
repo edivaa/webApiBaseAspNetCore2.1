@@ -16,8 +16,8 @@ services:
       - database
   database:
     image: microsoft/mssql-server-linux:2017-latest
-    volumes:
-      - ./mssql_bd:/var/opt/mssql
+    # volumes:
+    #   - ./mssql_bd:/var/opt/mssql
     ports:
       - "1433:1433"
     environment:
