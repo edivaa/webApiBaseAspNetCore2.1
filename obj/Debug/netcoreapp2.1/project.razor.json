@@ -1,14 +1,6 @@
 {
-  "ProjectFilePath": "/home/edivangt/workspace/estudos/AspNet/aspNetCore/webApiBaseAspNetCore2.1/webApiBaseAspNetCore2.1.csproj",
+  "ProjectFilePath": "/Users/edivan/Documents/programacao/projetos/estudos/aspNet/core/webApiBaseAspNetCore2.1/webApiBaseAspNetCore2.1.csproj",
   "TargetFramework": "netcoreapp2.1",
   "TagHelpers": [],
-  "Configuration": {
-    "ConfigurationName": "MVC-2.1",
-    "LanguageVersion": "2.1",
-    "Extensions": [
-      {
-        "ExtensionName": "MVC-2.1"
-      }
-    ]
-  }
+  "Configuration": null
 }

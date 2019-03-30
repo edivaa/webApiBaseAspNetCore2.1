@@ -9,7 +9,7 @@ using webApiBaseAspNetCore2._1.Data;
 namespace webApiBaseAspNetCore2._1.Migrations
 {
     [DbContext(typeof(TodoContext))]
-    [Migration("20190322185341_InitialCreate")]
+    [Migration("20190323035741_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

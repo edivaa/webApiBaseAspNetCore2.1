@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-using webApiBaseAspNetCore2._1.Services;
 using webApiBaseAspNetCore2._1.Models;
 using webApiBaseAspNetCore2._1.Data;
+using webApiBaseAspNetCore2._1.Services;
 
 namespace webApiBaseAspNetCore2._1.Controllers
 {
@@ -14,31 +15,32 @@ namespace webApiBaseAspNetCore2._1.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
+       
         private readonly TodoContext _context; 
-        
-        public UsuarioController (TodoContext context){
 
-                   _context = context;
-                   
-                //    if(_context.Usuarios.Count()=0){
+        public UsuarioController(TodoContext context){
+            _context = context;
 
-                //        _context.Add(
-                //             new Usuario
-                //            { 
-                //             Nome="Fernando",
-                //             Telefone="99987889",
-                //             Email="fernC@gmail.com"
-                //             );
-                //    }
+            if(_context.Usuarios.Count()==0){
 
+                _context.Usuarios.Add(
+                    new Usuario { 
+                        Nome="Antonio",
+                        Telefone="321212313",
+                        Email="anto@gmail.com"
+                    }
+                );
+
+                _context.SaveChanges();
+            }
         }
 
-         
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<Usuario>> Get()
+        public async Task<ActionResult<IEnumerable<Usuario>>> Get()
         {
-            return _context.Usuarios.ToList();
+             //return UsuarioService.GetDadosUsuarios();   
+             return  await _context.Usuarios.ToListAsync();
         }
 
         // GET api/values/5
@@ -50,8 +52,13 @@ namespace webApiBaseAspNetCore2._1.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Usuario Post(Usuario value)
         {
+            _context.Usuarios.Add(value);
+            _context.SaveChanges();
+
+
+            return CreatedAtAction(nameof(Get), new { id = value.Id}, value);
         }
 
         // PUT api/values/5
