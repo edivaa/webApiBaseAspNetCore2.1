@@ -1,10 +1,20 @@
 #!/bin/bash
 # git checkout --  mssql_bd/
 # git checkout --  dist/
+#git checkout -- appsettings.json
+
 git checkout --  bin/
 git checkout --  obj/
+git checkout -- Migrations/
 
-#git checkout --  mssql_bd/
-git checkout -- mssql_bd/.system/
-git checkout -- mssql_bd/log/
-git checkout -- mssql_bd/secrets
+
+git checkout -- mssql_bd/data/master.mdf
+git checkout -- mssql_bd/data/mastlog.ldf
+git checkout -- mssql_bd/data/model.mdf
+git checkout -- mssql_bd/data/modellog.ldf
+git checkout -- mssql_bd/data/msdbdata.mdf
+git checkout -- mssql_bd/data/msdblog.ldf
+git checkout -- mssql_bd/data/tempdb.mdf
+git checkout -- mssql_bd/data/templog.ldf
+
+
