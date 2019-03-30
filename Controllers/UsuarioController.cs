@@ -40,19 +40,24 @@ namespace webApiBaseAspNetCore2._1.Controllers
         public async Task<ActionResult<IEnumerable<Usuario>>> Get()
         {
              //return UsuarioService.GetDadosUsuarios();   
-             return  await _context.Usuarios.ToListAsync();
+             return await _context.Usuarios.ToListAsync();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<ActionResult<Usuario>> Get(long id)
         {
-            return "value";
+              var usuario = await _context.Usuarios.FindAsync(id);
+
+              if(usuario == null){
+                 return NotFound();
+              }
+              return usuario;
         }
 
         // POST api/values
         [HttpPost]
-        public Usuario Post(Usuario value)
+        public async Task<ActionResult<Usuario>> Post(Usuario value)
         {
             _context.Usuarios.Add(value);
             _context.SaveChanges();
@@ -63,14 +68,38 @@ namespace webApiBaseAspNetCore2._1.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<ActionResult> Put(long id, Usuario usuario)
         {
+            
+                if(id != usuario.Id ){
+                    return BadRequest();
+                }
+
+                _context.Entry(usuario).State = EntityState.Modified;
+
+                await _context.SaveChangesAsync();
+
+                return NoContent();   
+             
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(long id)
         {
+            var usuario = await _context.Usuarios.FindAsync(id); 
+
+            if(usuario == null){
+
+                return NotFound();
+            } 
+
+            _context.Usuarios.Remove(usuario);
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+
         }
     }
 }

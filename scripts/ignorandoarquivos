@@ -1,8 +1,12 @@
 #!/bin/bash
 # git checkout --  mssql_bd/
 # git checkout --  dist/
+#git checkout -- appsettings.json
+
 git checkout --  bin/
 git checkout --  obj/
+git checkout -- Migrations/
+
 
 git checkout -- mssql_bd/data/master.mdf
 git checkout -- mssql_bd/data/mastlog.ldf
