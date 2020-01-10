@@ -21,18 +21,6 @@ namespace webApiBaseAspNetCore2._1.Controllers
         public UsuarioController(TodoContext context){
             _context = context;
 
-            if(_context.Usuarios.Count()==0){
-
-                _context.Usuarios.Add(
-                    new Usuario { 
-                        Nome="Antonio",
-                        Telefone="321212313",
-                        Email="anto@gmail.com"
-                    }
-                );
-
-                _context.SaveChanges();
-            }
         }
 
         // GET api/values
